@@ -5,7 +5,6 @@
  // 1. express 객체 생성 
  const express = require('express'); 
  const app = express(); 
- const webSocket = new WebSocket("ws://k6s105.p.ssafy.io:30002"); 
  // 2. "/" 경로 라우팅 처리 
  app.use("/", (req, res)=>{ 
  	res.sendFile('index.html', { root: __dirname }) 
