@@ -18,7 +18,10 @@ window.onload = function() {
     // 2-2) 메세지 수신 이벤트 처리 
     webSocket.onmessage = function (event) { 
     console.log(`서버 웹소켓에게 받은 데이터: ${event.data}`);
-    webSocket.send(event.data);
+    // webSocket.send(event.data);
+    webSocket.clients.forEach(client => {
+        client.send(event.data)
+    })
     
     } 
     // 2-3) 연결 종료 이벤트 처리 
